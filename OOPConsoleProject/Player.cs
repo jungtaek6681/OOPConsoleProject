@@ -9,6 +9,7 @@ namespace OOPConsoleProject
     public class Player
     {
         public Vector2 position;
+        public bool[,] map;
 
         public void Print()
         {
@@ -20,20 +21,27 @@ namespace OOPConsoleProject
 
         public void Move(ConsoleKey input)
         {
+            Vector2 targetPos = position;
+
             switch (input)
             {
                 case ConsoleKey.UpArrow:
-                    position.y--;
+                    targetPos.y--;
                     break;
                 case ConsoleKey.DownArrow:
-                    position.y++;
+                    targetPos.y++;
                     break;
                 case ConsoleKey.LeftArrow:
-                    position.x--;
+                    targetPos.x--;
                     break;
                 case ConsoleKey.RightArrow:
-                    position.x++;
+                    targetPos.x++;
                     break;
+            }
+
+            if (map[targetPos.y, targetPos.x] == true)
+            {
+                position = targetPos;
             }
         }
     }
