@@ -8,6 +8,11 @@ namespace OOPConsoleProject.Scenes
 {
     public class TItleScene : BaseScene
     {
+        public TItleScene()
+        {
+            name = "Title";
+        }
+
         public override void Render()
         {
             Console.WriteLine("********************");

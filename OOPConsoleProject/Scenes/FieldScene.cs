@@ -7,42 +7,14 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject.Scenes
 {
-    public class FieldScene : BaseScene
+    public abstract class FieldScene : BaseScene
     {
         private ConsoleKey input;
 
-        private string[] mapData;
-        private bool[,] map;
+        protected string[] mapData;
+        protected bool[,] map;
 
-        private List<GameObject> gameObjects;
-
-        public FieldScene()
-        {
-            mapData = new string[]
-            {
-                "########",
-                "#   #  #",
-                "#   #  #",
-                "### #  #",
-                "#      #",
-                "########"
-            };
-
-            map = new bool[6, 8];
-            for (int y = 0; y < map.GetLength(0); y++)
-            {
-                for (int x = 0; x < map.GetLength(1); x++)
-                {
-                    map[y, x] = mapData[y][x] == '#' ? false : true;
-                }
-            }
-
-            gameObjects = new List<GameObject>();
-            gameObjects.Add(new Place("Town", 'T', new Vector2(1, 1)));
-
-            Game.Player.position = new Vector2(1, 1);
-            Game.Player.map = map;
-        }
+        protected List<GameObject> gameObjects;
 
         public override void Render()
         {
