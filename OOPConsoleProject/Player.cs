@@ -9,7 +9,8 @@ namespace OOPConsoleProject
     public class Player
     {
         public Vector2 position;
-        public Inventory inventory;
+        private Inventory inventory;
+        public Inventory Inventory { get { return inventory; } }
         public bool[,] map;
 
         private int curHP;
