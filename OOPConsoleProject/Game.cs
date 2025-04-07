@@ -22,12 +22,20 @@ namespace OOPConsoleProject
             {
                 Console.Clear();
                 curScene.Render();
+                Console.WriteLine();
                 curScene.Input();
+                Console.WriteLine();
                 curScene.Update();
+                Console.WriteLine();
                 curScene.Result();
             }
 
             End();
+        }
+
+        public static void ChangeScene(string sceneName)
+        {
+            curScene = sceneDic[sceneName];
         }
 
         /// <summary>
@@ -41,6 +49,9 @@ namespace OOPConsoleProject
             // 씬 설정
             sceneDic = new Dictionary<string, BaseScene>();
             sceneDic.Add("Title", new TItleScene());
+            sceneDic.Add("Test01", new TestScene01());
+            sceneDic.Add("Test02", new TestScene02());
+            sceneDic.Add("Test03", new TestScene03());
 
             curScene = sceneDic["Title"];
         }
