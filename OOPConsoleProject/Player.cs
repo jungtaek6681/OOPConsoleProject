@@ -42,7 +42,23 @@ namespace OOPConsoleProject
             Console.ResetColor();
         }
 
-        public void Move(ConsoleKey input)
+        public void Action(ConsoleKey input)
+        {
+            switch (input)
+            {
+                case ConsoleKey.UpArrow:
+                case ConsoleKey.DownArrow:
+                case ConsoleKey.LeftArrow:
+                case ConsoleKey.RightArrow:
+                    Move(input);
+                    break;
+                case ConsoleKey.I:
+                    inventory.Open();
+                    break;
+            }
+        }
+
+        private void Move(ConsoleKey input)
         {
             Vector2 targetPos = position;
 
