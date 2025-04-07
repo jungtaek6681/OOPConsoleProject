@@ -1,4 +1,5 @@
 ﻿using OOPConsoleProject.GameObjects;
+using OOPConsoleProject.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,7 @@ namespace OOPConsoleProject.Scenes
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("Town", 'T', new Vector2(1, 1)));
             gameObjects.Add(new Place("ForestField", 'F', new Vector2(6, 1)));
+            gameObjects.Add(new Potion(new Vector2(1, 4)));
         }
 
         public override void Enter()

@@ -25,6 +25,9 @@ namespace OOPConsoleProject.Scenes
             }
 
             Game.Player.Print();
+
+            Console.SetCursorPosition(0, map.GetLength(0) + 2);
+            Game.Player.inventory.PrintALL();
         }
 
         public override void Input()
@@ -44,6 +47,11 @@ namespace OOPConsoleProject.Scenes
                 if (Game.Player.position == go.position)
                 {
                     go.Interact(Game.Player);
+                    if (go.isOnce == true)
+                    {
+                        gameObjects.Remove(go);
+                    }
+                    break;
                 }
             }
         }
